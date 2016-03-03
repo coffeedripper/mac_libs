@@ -1,5 +1,5 @@
 var apiRoot = '/api/maclibs/';
-// var q = 0;
+
 
 function macLibs(x) {
 
@@ -39,6 +39,8 @@ function macLibs(x) {
         if (q === questArr.length) {
             $('#lib').append("");
             combine(questArr, tempArr);
+            smsLib();
+
 
         }
     });
@@ -57,11 +59,32 @@ function combine(a, t) {
 
     var result = t.join("");
     $('#lib').append(result);
+    smsLib(result);
 
 } //end of function combine
 
+function smsLib(x) {
+    // var msg = $('#lib').val();
+
+    console.log("ajax hit");
+
+    // jQuery sms
+    $.ajax({
+        url: "/twilio",
+        type: "POST",
+        data: { msg: x  },
+        success: function(data, textStatus, jqXHR) {
+            console.log(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus);
+        }
+    }); //close ajax
+}; //close smsTweet//
+
 
 $(function() {
+
 
     $.ajax({
             url: apiRoot,

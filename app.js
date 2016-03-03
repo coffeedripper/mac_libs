@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var maclibsApi = require('./routes/api/maclibs');
+var twilioApi = require('./routes/twilio');
 
 var app = express();
 
@@ -28,6 +29,7 @@ mongoose.connect('mongodb://mac_lib_admin:mongomac@ds019658.mlab.com:19658/mac_l
 
 app.use('/', routes);
 app.use('/api/maclibs', maclibsApi);
+app.use('/twilio', twilioApi);
 // app.use('/users', users);
 
 // catch 404 and forward to error handler
