@@ -52,7 +52,7 @@ function macLibs(x) {
         smsLib(result, cell);
         $('#numberBox').val("");
         $('#lib').empty();
-        $('#lib').append("MacLib Sent! <br> Check your Cell! <br> Refresh to Play Again!");
+        $('#lib').append("MacLib Sent! <br> Check your Cell! <br> Refresh to Play Again.");
         var cell = null;
 
     });

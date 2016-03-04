@@ -6,3 +6,28 @@ body {
 a {
   color: #00B7FF;
 }
+
+#form {
+    text-align: center;
+    margin-top: 35px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*  width: 525px;
+    height: 30px;*/
+
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px #ff0000;
+    font-size: 50px;
+
+}
+
+#lib {
+
+  text-align: center;
+    margin-top: 25px;
+    font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+}
