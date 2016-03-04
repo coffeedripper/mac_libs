@@ -9,7 +9,7 @@ router.post('/', function(req, res) {
     var client = require('twilio')(accountSid, authToken);
 
     client.messages.create({
-        to: "8312345907",
+        to: req.body.cell,
         from: "+16508262380",
         body: req.body.msg,
     }, function(err, message) {

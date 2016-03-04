@@ -1,4 +1,8 @@
 var apiRoot = '/api/maclibs/';
+$('#saveNumber').hide();
+$('#numberBox').hide();
+
+
 
 
 function macLibs(x) {
@@ -31,20 +35,35 @@ function macLibs(x) {
         $('#lib').empty();
         $('#answerBox').val("");
         q++;
+
         if (q < questArr.length) {
-
             $('#lib').append("enter " + questArr[q]);
-
         };
+
         if (q === questArr.length) {
-            $('#lib').append("");
-            combine(questArr, tempArr);
-            smsLib();
-
-
+            result = combine(questArr, tempArr);
+            $('#lib').append("Enter Mobile Number");
+            $('#answerBox').hide();
+            $('#saveAnswer').hide();
+            $('#saveNumber').show();
+            $('#numberBox').show();
         }
     });
-}
+
+    $("#saveNumber").click(function() {
+        var cell = $('#numberBox').val();
+        smsLib(result, cell);
+        $('#numberBox').val("");
+        $('#lib').empty();
+        $('#lib').append("MacLib Sent! <br> Check your Cell! <br> Refresh to Play Again!");
+        var cell = null;
+
+
+
+
+    });
+
+} //end mac libs
 
 
 function combine(a, t) {
@@ -58,26 +77,30 @@ function combine(a, t) {
     } //end 1st for loop
 
     var result = t.join("");
-    $('#lib').append(result);
-    smsLib(result);
+    return result;
+    // $('#lib').append(result);
+    // smsLib(result);
 
 } //end of function combine
 
-function smsLib(x) {
-    // var msg = $('#lib').val();
+function smsLib(x, y) {
 
-    console.log("ajax hit");
+
 
     // jQuery sms
     $.ajax({
         url: "/twilio",
         type: "POST",
-        data: { msg: x  },
+        data: {
+            msg: x,
+            cell: y
+        },
         success: function(data, textStatus, jqXHR) {
             console.log(data);
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log(textStatus);
+            console.log("ajax hit ,err");
         }
     }); //close ajax
 }; //close smsTweet//
