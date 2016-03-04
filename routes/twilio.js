@@ -4,13 +4,14 @@ var router = express.Router();
 
 // "Create" action to sms a new quote
 router.post('/', function(req, res) {
-    var accountSid = 'AC8cf030063451b237502859af10be40b3';
-    var authToken = '23c4e4834dcbba0e73b9e57d77200aab';
+    var accountSid = process.env.TWILIO_SID;
+    var authToken = process.env.TWILIO_TOKEN;
+    var twilioNum = process.env.TWILIO_NUM;
     var client = require('twilio')(accountSid, authToken);
 
     client.messages.create({
         to: req.body.cell,
-        from: "+16508262380",
+        from: twilioNum,
         body: req.body.msg,
     }, function(err, message) {
         console.log(message);
