@@ -9,9 +9,6 @@ var maclibSchema = new mongoose.Schema({
 
 var Maclib = mongoose.model('Maclib', maclibSchema);
 
-
-
-
 // Make this available to our other files
 module.exports = Maclib;
 

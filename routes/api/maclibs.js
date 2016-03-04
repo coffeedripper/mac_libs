@@ -9,15 +9,12 @@ router.get('/', function(req, res) {
             throw err;
             console.log(err);
         };
-          console.log(maclib);
+        console.log(maclib);
         res.send(maclib);
-
-
 
         // }); //res end//
     }); //Maclib.find//
 }); //router.get//
-
 
 
 // "Create" action to create a new quote
@@ -27,7 +24,6 @@ router.post('/', function(req, res) {
 
         body: req.body.body,
         author: req.body.author
-        // author: "mac"
 
     });
 

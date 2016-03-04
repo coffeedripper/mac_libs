@@ -2,9 +2,6 @@ var apiRoot = '/api/maclibs/';
 $('#saveNumber').hide();
 $('#numberBox').hide();
 
-
-
-
 function macLibs(x) {
 
     var questArr = [];
@@ -57,9 +54,6 @@ function macLibs(x) {
         $('#lib').empty();
         $('#lib').append("MacLib Sent! <br> Check your Cell! <br> Refresh to Play Again!");
         var cell = null;
-
-
-
 
     });
 
