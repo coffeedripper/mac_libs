@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 
     res.render('index', {
 
-        title: 'MacLibs'
+        title: 'Text Libs'
 
     }); //resrender
     // }); //findone
