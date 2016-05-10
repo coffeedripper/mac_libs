@@ -1,33 +1,50 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
-#form {
-    text-align: center;
-    margin-top: 35px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /*  width: 525px;
-    height: 30px;*/
-
+    padding: 50px;
+    font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 h1 {
     text-align: center;
     text-shadow: 1px 1px #ff0000;
     font-size: 50px;
+}
+
+a {
+    color: #00B7FF;
+}
+
+#form {
+    text-align: center;
+    margin-top: 0px;
+    font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+    height: 50px;
+}
+
+input[type="button"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: white;
+}
+
+input {
+    text-align: center;
 
 }
 
+.mytext {
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+}
+
 #lib {
-
-  text-align: center;
-    margin-top: 25px;
-    font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-
+    text-align: center;
+    margin-top: 100px;
+    font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
