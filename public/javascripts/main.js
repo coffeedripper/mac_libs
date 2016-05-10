@@ -52,12 +52,12 @@ function macLibs(x) {
         smsLib(result, cell);
         $('#numberBox').val("");
         $('#lib').empty();
-        $('#lib').append("MacLib Sent! <br> Check your Cell! <br> Refresh to Play Again.");
+        $('#lib').append("Text Lib Sent! <br> Check your Cell! <br> Refresh to Play Again.");
         var cell = null;
 
     });
 
-} //end mac libs
+} //end text libs
 
 
 function combine(a, t) {
@@ -78,8 +78,6 @@ function combine(a, t) {
 } //end of function combine
 
 function smsLib(x, y) {
-
-
 
     // jQuery sms
     $.ajax({
